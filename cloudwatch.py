@@ -30,14 +30,14 @@ def lambda_handler(event, context):
         
         flag = 0 
         for tagkey in response['tags']:
-          if ( tagkey == 'map-migrated'  ):
+          if ( tagkey == 'abcd'  ):
             flag = 1
             alrdy_tagged += 1
             
         if ( flag == 0  ):
           
           try:
-            response = cloud_w_client.tag_log_group(logGroupName=cloud_watch_name,tags={'map-migrated': 'd-server-00hnvedb9bgt7t'})
+            response = cloud_w_client.tag_log_group(logGroupName=cloud_watch_name,tags={'abcd': 'abcd'})
             tagged_now += 1
             
           except Exception as e:
